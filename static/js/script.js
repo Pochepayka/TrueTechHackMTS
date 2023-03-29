@@ -205,7 +205,7 @@
 
             break;
             case 3:  // if (x === 'value2') ...
-                player.poster ="https://drive.google.com/uc?export=preview&id=1j52HifhieqAHYR7bZuRZKdbEjXsNY-3Z";
+                player.poster ="static/image/mem3.png";
                 if (epilepsion==false)
                 {
                     player.src ="https://drive.google.com/uc?export=preview&id=1j52HifhieqAHYR7bZuRZKdbEjXsNY-3Z";
@@ -217,7 +217,7 @@
                 }
             break;
             case 4:  // if (x === 'value2') ...
-                player.poster ="https://drive.google.com/uc?export=preview&id=16bJTq_bcRJgObSYq93XudUtLR-Mf_zSh";
+                player.poster ="static/image/mem4.png";
                 if (epilepsion==false)
                 {
                     player.src ="https://drive.google.com/uc?export=preview&id=16bJTq_bcRJgObSYq93XudUtLR-Mf_zSh";
@@ -228,7 +228,7 @@
                 }
             break;
             case 5:  // if (x === 'value2') ...
-                player.poster ="https://drive.google.com/uc?export=preview&id=1EsebTzq4KV45mpjS4QnG76amTY_3kx0O";
+                player.poster ="static/image/mem5.png";
                 if (epilepsion==false)
                 {
                     player.src ="https://drive.google.com/uc?export=preview&id=1EsebTzq4KV45mpjS4QnG76amTY_3kx0O";
