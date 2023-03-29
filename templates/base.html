@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name=""
+          content="">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <link rel="stylesheet" href = "{{url_for('static', filename='css/main.css')}}">
+    <title id="title">{% block title %}{% endblock %}</title>
+    <script src="static/js/script.js"></script>
+</head>
+<body>
+    <article id="background"></article>
+    <article id="allBlocks">
+        <header>
+            <a href="#" onclick="DivVisible(document.getElementById('home'))">
+              <div>
+                <img src="static/image/logo.jpg" width="40%" height="40%" alt="">
+              </div>
+            </a>
+
+            <ul>
+              <li><a href="#" class="href" onclick="DivVisible(document.getElementById('videos'))">Библиотека видео</a></li>
+              <li><a href="#" class="href" onclick="DivVisible(document.getElementById('setting'))">Настройки</a></li>
+              <li><a href="#" class="href" onclick="DivVisible(document.getElementById('contact'))">Контакты</a></li>
+              <li><a href="#" class="href" onclick="DivVisible(document.getElementById('user'))">Пользователь</a></li>
+            </ul><br><br>
+        </header>
+
+
+        {% block content %}{% endblock %}
+        <footer class="mainBlock">
+            <hr noshade id="line" size="4" color="#D2B48C">
+            <p>© 2023 Company, Inc<br></p>
+        </footer>
+    </article>
+</body>
+
+<script src="static/js/script.js"></script>
+</html>

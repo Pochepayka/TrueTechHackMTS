@@ -1,0 +1,180 @@
+{%extends 'base.html'%}
+
+{%block title%}
+Hello
+{%endblock%}
+
+
+{%block content%}
+<center>
+
+    <div id="home" style="display:block" class="mainBlock">
+        <img src="static/image/womanWithTee.jpg">
+            <p>Добро пожаловать на наш сайт, <br>где вы можете с легкостью просматривать видео и <br>настроить его формат под свои потребности! <br>Мы заботимся о вашем удобстве и уверены, <br>что вы найдете у нас все необходимое для полноценных просмотров. <br>Желаем вам приятных просмотров вместе с нами!</p>
+    </div>
+    <div id="settingRangs" style="display:none" class="mainBlock">
+        <p>Параметры изображения</p>
+        <form action="" method="post" name="test" id="formRangs">
+                <p>Контраст</p>
+                <input type="range" id="contrast" min="0" max="100" step="1" value="50"><br>
+
+                <p>Яркость</p>
+                <input type="range" id="brightness" min="0" max="100" step="1" value="50"><br>
+
+                <p>Сепия</p>
+                <input type="range" id="sepia" min="0" max="100" step="1" value="0"><br>
+
+                <p>Блюр</p>
+                <input type="range" id="blur" min="0" max="100" step="1" value="0"><br>
+
+                <p>Насыщенность</p>
+                <input type="range" id="saturate" min="0" max="100" step="1" value="50"><br>
+
+                <p>Оттенки серого</p>
+                <input type="range" id="grayscale" min="0" max="100" step="1" value="0"><br>
+
+                <p>Смещение цветов</p>
+                <input type="range" id="huerotate" min="0" max="100" step="1" value="0"><br>
+
+                <p>Инверсия</p>
+                <input type="range" id="invert" min="0" max="100" step="1" value="0"><br>
+
+                <p>Прозрачность</p>
+                <input type="range" id="opacity" min="0" max="100" step="1" value="100"><br>
+                <input type="button" name="button" id="buttonRangs" value="Обновить"
+               onclick="FormRangsProcessing(document.getElementById('formRangs'))">
+             </form><br>
+    </div>
+
+
+    <div id="settingPresets" style="display:none" class="mainBlock">
+        <p>Пресеты</p>
+        <div class="blockProduct">
+                <p>Красочно</p>
+                <img src="static/image/img1.jpg" id= "crasochno" style="filter: saturate(120%) brightness(120%);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('crasochno'))">
+        </div>
+        <div class="blockProduct">
+                <p>Тускло</p>
+                <img src="static/image/img1.jpg" id= "tusclo" style="filter: saturate(80%) brightness(90%);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('tusclo'))">
+        </div>
+        <div class="blockProduct">
+                <p>Размыто</p>
+                <img src="static/image/img1.jpg" id= "razmito" style="filter: blur(2px);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('razmito'))">
+        </div>
+        <div class="blockProduct">
+                <p>ЧБ</p>
+                <img src="static/image/img1.jpg" id= "chb" style="filter: grayscale(100%);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('chb'))">
+        </div>
+        <div class="blockProduct daltonicBlock" style="display:none;">
+                <p>Deuteranopia</p>
+                <img src="static/image/img1.jpg" id= "Deuteranopia" style="filter: hue-rotate(-105deg) saturate(0.6) contrast(1.3);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('Deuteranopia'))">
+        </div>
+        <div class="blockProduct daltonicBlock" style="display:none;">
+                <p>Protanopia</p>
+                <img src="static/image/img1.jpg" id= "Protanopia" style="filter: hue-rotate(-70deg) saturate(0.6) contrast(1.3);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('Protanopia'))">
+        </div>
+        <div class="blockProduct daltonicBlock" style="display:none;">
+                <p>Tritanopia</p>
+                <img src="static/image/img1.jpg" id= "Tritanopia" style="filter: hue-rotate(20deg) saturate(0.6) contrast(1.3);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('Tritanopia'))">
+        </div>
+        <div class="blockProduct daltonicBlock" style="display:none;">
+                <p>Monochromacy</p>
+                <img src="static/image/img1.jpg" id= "Monochromacy" style="filter: saturate(0.6) contrast(1.4);" width="90%">
+                <input type="button" class="button" value="Применить" onclick="DoPreset(document.getElementById('Monochromacy'))">
+        </div>
+    </div>
+
+
+    <div id="setting" style="display:none" class="mainBlock">
+             <p>Выбор пользовательских специальных настроек</p>
+            <form action="" method="post" name="test" id="form">
+
+                <a href="#" class="href"><p onclick="DivVisible(document.getElementById('settingPresets'))">-ПРЕСЕТЫ</p></a>
+                <a href="#" class="href"><p onclick="DivVisible(document.getElementById('settingRangs'))">-ПАРАМЕТРЫ ИЗОБРАЖЕНИЯ</p></a><br>
+                <label for="daltonizm">Есть ли дальтонизм:</label>
+                <select name="daltonizm" id="daltonizm" value="">
+                    <option>Нет</option>
+                    <option>Да</option>
+                </select><br>
+
+                <label for="epilepsion">Есть ли предпосылки к эпилепсии:</label>
+                <select name="epilepsion" id="epilepsion" value="">
+                    <option>Нет</option>
+                    <option>Да</option>
+                </select><br>
+                <input type="button" name="button" id="button" value="Обновить"
+                onclick="FormProcessing(document.getElementById('form'))">
+            </form><br>
+
+    </div>
+
+
+
+    <div id="contact" style="display:none" class="mainBlock">
+            <p>Как нас найти:</p>
+            <img src="static/image/map.jpg" width="700" height="">
+            <p>ул.Дубосековская д.13, Москва</p>
+            <p>
+                <img src="static/image/metroRed.jpg" width="30" height="">
+                Стрешнево
+                <a href="https://yandex.ru/maps/213/moscow/?ll=37.492779%2C55.812048&mode=routes&rtext=55.812676%2C37.488070~55.812465%2C37.497488&rtt=pd&ruri=~&z=13.43"
+                   class="nav-link px-2 text-muted">
+                    880м
+                </a>
+            </p>
+            <p>
+                <img src="static/image/metroGreen.jpg" width="30" height="">
+                Войковская
+                <a href="https://yandex.ru/maps/213/moscow/?ll=37.499450%2C55.815173&mode=routes&rtext=55.817880%2C37.498197~55.812465%2C37.497488&rtt=pd&ruri=~&z=14.64"
+                   class="nav-link px-2 text-muted">
+                    930м
+                </a>
+            </p>
+            <p> <img src="static/image/metroGreen.jpg" width="30" height="">
+                Сокол
+                <a href="https://yandex.ru/maps/213/moscow/?ll=37.505889%2C55.808985&mode=routes&rtext=55.805535%2C37.515040~55.812465%2C37.497488&rtt=pd&ruri=~&z=12.47"
+                   class="nav-link px-2 text-muted">
+                    1.83км
+                </a>
+            </p>
+           <!--<p>С нами можно связаться через <a href="https://vk.com/mai_choco" class="nav-link px-2 text-muted">нашу группу в VK</a></p>-->
+    </div>
+
+
+    <div id="videos" style="display:none" class="mainBlock">
+        <p>Выбор видео</p>
+        <!--<div class="blockProduct">
+                <p>Мем №1</p>
+                <img src="static/image/mem1.png" class= "reformat" style="filter: blur(0px);" width="90%">
+                <input type="button" class="button" value="Смотреть" onclick="DivVisible(document.getElementById('watch'),1)">
+        </div>
+
+        <div class="blockProduct">
+                <p>Мем №2</p>
+                <img src="static/image/mem2.png" class= "reformat" style="filter: blur(0px);" width="90%">
+                <input type="button" class="button" value="Смотреть" onclick="DivVisible(document.getElementById('watch'),2)">
+        </div>-->
+    </div>
+
+
+    <div id="user" style="display:none" class="mainBlock">
+        <p>Профиль</p>
+    </div>
+
+    <div id="watch" style="display:none" class="mainBlock">
+        <p>Приятного просмотра!</p>
+        <video id="player" class= "reformat" style="filter: blur(0px);" poster="" height="600" controls>
+            <source src="">
+        </video>
+    </div>
+
+
+</center>
+{%endblock%}

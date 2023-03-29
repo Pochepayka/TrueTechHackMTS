@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;/*вид ссылки без черты*/
+    font-family: 'Montserrat';/*шрифт*/
+    font-style: normal;/*тип стиля (normal | italic | oblique | inherit)*/
+    font-weight: 600;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size: 36px;/*размер шрифта*/
+    color: #000000;/*цвет шрифта*/
+    line-height: 2px;/*межстрочный интервал*/
+    line-height: 39px;/*межстрочный интервал*/
+    z-index: 2;/*слои*/
+    /*overflow: auto;*//*уменьшение упаковка в маленький блок*/
+}
+#background
+{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#FFEBCD;
+    z-index: 0;/*слои*/
+}
+#allBlocks
+{
+    position:relative;
+    display:block;
+    width:99%;
+    min-height:99%;
+    border-radius: 10px;
+    max-width: 1200px;
+    min-width: 1200px;
+    margin-left:calc((100% - 1200px)/2);
+    margin-right:calc((100% - 1200px)/2);
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    background:#FFDEAD;
+    z-index: 1;/*слои*/
+    float:left;
+}
+header
+{
+    border-radius: 10px 10px 0px 0px;
+    height: 110px;
+    background: white;
+    position:relative;
+    display:block;
+    width:100%;
+    background:;
+    float:left;
+}
+header > a
+{
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+header > ul
+{
+    position: absolute;
+    display: flex;/*принцип размещения объектов (block | inline | list-item | none)*/
+    max-width: 80%;
+    height: 60px;
+    right: 80px;
+    bottom: 20px;
+    background: none;
+    overflow: hidden;
+    gap: 75px;/*расстояние между элементами*/
+    list-style: none;/*снятие стиля списка*/
+}
+
+a.href:focus
+{
+    color: rgba(0, 0, 0, 0.50);
+}
+a.href:hover
+{
+    color: rgba(0, 0, 0, 0.50);
+}
+.href
+{
+    font-family: 'Montserrat';/*шрифт*/
+    font-style: normal;/*тип стиля (normal | italic | oblique | inherit)*/
+    font-weight: 1000;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size: 24px;/*размер шрифта*/
+    color: #000000;/*цвет шрифта*/
+    line-height: 2px;/*межстрочный интервал*/
+}
+div#home>img,p
+{
+    width:100%;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2%;
+    margin-top:2%;
+    text-align: center;
+    color:#90522D;
+}
+p,label,h1
+{
+    color:#90522D;
+}
+div#assortment>p, div#setting>p, div#contact>p,div#contact>img , div#user>p
+{
+    padding:relative;
+    width:100%;
+    display:block;
+    margin-bottom:10px;
+    text-align: center;
+    color:#90522D;
+    float:left;
+}
+a
+{
+    color:#CD853F;
+    font-family: 'Montserrat';/*шрифт*/
+    font-style: normal;/*тип стиля (normal | italic | oblique | inherit)*/
+}
+div#contact
+{
+    padding:relative;
+    display:block;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:10px;
+    color:#90522D;
+    float:left;
+}
+.blockProduct
+{
+    position:relative;
+    display:block;
+    background:#FFF8DC;
+    width:450px;
+    min-height:250px;
+    margin:15px 30px 15px 30px ;
+    float:left;
+    border-radius: 10px;
+    text-align: center;
+    color:#90522D;
+    font-weight:450;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size:30px;
+    padding:5px;
+}
+div.blockProduct > p
+{
+    font-weight:700;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size:36px;
+    display:block;
+    margin-bottom:10px;
+}
+div.blockProduct > img
+{
+    width:90%;
+}
+.button
+{
+    position:relative;
+    display:block;
+    font-weight: 450;
+    background:#F5DEB3;
+    float:right;
+    text-align: none;
+    margin-right:5%;
+    border-radius:5px;
+    border-color:#CD853F;
+    color:#CD853F;
+    border-style:solid;
+    border-width:0.5px;
+    padding:4px 2px 4px 2px;
+}
+footer
+{
+    margin-top:5%;
+}
+footer>p
+{
+    text-align: center;
+    font-weight: 400;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size: 32px;/*размер шрифта*/
+}
+.mainBlock
+{
+    position:relative;
+    display:block;
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:10px;
+    color:#90522D;
+
+    text-align: center;
+    background:;
+    float:left;
+}
+form{
+    position:relative;
+    display:block;
+    background:#FFF8DC;
+    width:800px;
+    min-height:500px;
+    margin:30px 130px 30px 130px;
+    float:left;
+    border-radius: 10px;
+    text-align: none;
+    color:#90522D;
+    font-weight:450;/*насыщеность жирность (bold|bolder|lighter|normal|100|200|300|400|500|600|700|800|900)*/
+    font-size:30px;
+    padding:20px;
+
+}
+
+#line
+{
+    width:60%;
+    border-radius: 10px;
+    margin-right:auto;
+    margin-left:auto;
+}
